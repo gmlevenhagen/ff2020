@@ -3,6 +3,7 @@ class Ff2020::CLI
   def call
     qb_rankings
     rb_rankings
+    wr_rankings
     rankings
     goodbye
   end
@@ -23,6 +24,14 @@ class Ff2020::CLI
     DOC
   end
   
+  def wr_rankings
+    puts "Fantasy Football WR Rankings for 2020:"
+    puts <<-DOC
+      1. Michael Thomas, New Orleans Saints
+      2. Julio Jones, Atlanta Cardinals
+    DOC
+  end
+  
   def rankings
     puts "Enter what position you would want to see rankings or exit"
     input = nil
@@ -33,6 +42,8 @@ class Ff2020::CLI
         puts "#{qb_rankings}"
       when "RB"
         puts "#{rb_rankings}"
+      when "WR"
+        puts "#{wr_rankings}"
       when "list"
         qb_rankings
         rb_rankings
