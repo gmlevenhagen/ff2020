@@ -9,27 +9,15 @@ class Ff2020::CLI
   end
   
   def qb_rankings
-    puts "Fantasy Football QB Rankings for 2020:"
-    puts <<-DOC
-      1. Lamar Jackson, Baltimore
-      2.Patrick Mahomes, Kansas City
-    DOC
+    @ranking = Ff2020::Rankings.qb_ranks
   end
   
   def rb_rankings
-    puts "Fantasy Football RB Rankings for 2020:"
-    puts <<-DOC
-      1. Christian McCaffery, Carolina Panthers
-      2. Saquan Barkley, New York Giants
-    DOC
+   @ranking = Ff2020::Rankings.rb_ranks
   end
   
   def wr_rankings
-    puts "Fantasy Football WR Rankings for 2020:"
-    puts <<-DOC
-      1. Michael Thomas, New Orleans Saints
-      2. Julio Jones, Atlanta Cardinals
-    DOC
+     @ranking = Ff2020::Rankings.wr_ranks
   end
   
   def rankings
