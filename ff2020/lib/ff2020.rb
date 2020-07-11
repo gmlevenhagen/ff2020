@@ -1,6 +1,2 @@
-require "ff2020/version"
-
-module Ff2020
-  class Error < StandardError; end
-  # Your code goes here...
-end
+require_relative "./ff2020/version"
+require_relative './ff2020/cli'
