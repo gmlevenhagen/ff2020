@@ -24,7 +24,7 @@ class Ff2020::CLI
   end
   
   def rankings
-    puts "Enter what position you would want to see rankings for:"
+    puts "Enter what position you would want to see rankings or exit"
     input = nil
     while input != "exit"
       input = gets.strip
@@ -33,6 +33,11 @@ class Ff2020::CLI
         puts "#{qb_rankings}"
       when "RB"
         puts "#{rb_rankings}"
+      when "list"
+        qb_rankings
+        rb_rankings
+      else
+        puts "Not a rankings list: please type a position or exit."
       end
     end
   end
