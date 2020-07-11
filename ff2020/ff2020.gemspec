@@ -1,10 +1,10 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "ff_2020/version"
+require "ff2020/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "ff_2020"
+  spec.name          = "ff2020"
   spec.version       = Ff2020::VERSION
   spec.authors       = ["'Garett Levenhagen'"]
   spec.email         = ["'garettlevenhagen@gmail.com'"]
