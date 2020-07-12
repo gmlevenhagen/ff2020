@@ -23,6 +23,11 @@ Or install it yourself as:
 
 ## Usage
 
+1. Create CLI that will pull a list(s) of names and teams from positional rankings.
+2. Create a message when position not listed or other unknown object requested to redirect to postions or exit.
+3. Create an exit message.
+4. Update gemspec.
+5. Add scraping method to pull information from websites information was coming from.
 
 
 ## Development
