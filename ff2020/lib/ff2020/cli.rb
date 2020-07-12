@@ -41,7 +41,7 @@ class Ff2020::CLI
     end
   end
   
-  def goodbye
-    puts "Come back weekly for updated rankings!"
+    def goodbye
+      puts "Come back weekly for updated rankings!"
+    end
   end
-end
