@@ -21,7 +21,7 @@ class Ff2020::CLI
   end
   
   def rankings
-    puts "Enter what position you would want to see rankings or exit"
+    puts "Enter what tier you would like to see from QB rankings or exit"
     input = nil
     while input != "exit"
       input = gets.strip

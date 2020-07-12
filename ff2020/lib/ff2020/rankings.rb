@@ -2,7 +2,7 @@ class Ff2020::Rankings
   attr_accessor :name, :team, :url
   
   def self.tier_1
-    puts "Fantasy Football QB Rankings for 2020:"
+    puts "Fantasy Football QB Tier 1 for 2020:"
     puts <<-DOC
       QB Tier 1:
       1. Patrick Mahomes, Kansas City Chiefs
@@ -11,7 +11,7 @@ class Ff2020::Rankings
   end
   
   def self.tier_2
-    puts "Fantasy Football QB Rankings for 2020:"
+    puts "Fantasy Football QB Tier 2 for 2020:"
     puts <<-DOC
       QB Tier 2:
       1. Dak Prescott, Dallas Cowboys
@@ -22,7 +22,7 @@ class Ff2020::Rankings
   end
   
   def self.tier_3
-    puts "Fantasy Football QB Rankings for 2020:"
+    puts "Fantasy Football QB Tier 3 for 2020:"
     puts <<-DOC
       QB Tier 3:
       1. Aaron Rodgers, Green Bay Packers
