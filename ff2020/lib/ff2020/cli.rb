@@ -3,7 +3,6 @@ class Ff2020::CLI
   def call
     qb_rankings
     rb_rankings
-    wr_rankings
     rankings
     goodbye
   end
@@ -13,11 +12,7 @@ class Ff2020::CLI
   end
   
   def rb_rankings
-   @ranking = Ff2020::Rankings.rb_ranks
-  end
-  
-  def wr_rankings
-     @ranking = Ff2020::Rankings.wr_ranks
+    @ranking = Ff2020::Rankings.rb_ranks
   end
   
   def rankings
@@ -30,8 +25,6 @@ class Ff2020::CLI
         puts "#{qb_rankings}"
       when "RB"
         puts "#{rb_rankings}"
-      when "WR"
-        puts "#{wr_rankings}"
       when "list"
         qb_rankings
         rb_rankings

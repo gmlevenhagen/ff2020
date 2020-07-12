@@ -20,7 +20,7 @@ Gem::Specification.new do |spec|
     spec.metadata["allowed_push_host"] =  'http://mygemserver.com'
 
     spec.metadata["homepage_uri"] = spec.homepage
-    spec.metadata["source_code_uri"] = 'http://fantasypros.com'
+    spec.metadata["source_code_uri"] = 'https://www.fantasypros.com/nfl/rankings/patrick-mahomes.php?type=draft&position=QB&scoring=STD'
     spec.metadata["changelog_uri"] = 'http://fantasypros.com'
   else
     raise "RubyGems 2.0 or newer is required to protect against " \

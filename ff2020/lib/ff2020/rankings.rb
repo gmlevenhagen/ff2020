@@ -1,12 +1,11 @@
 class Ff2020::Rankings
+  attr_accessor :name, :team, :url
   
   def self.qb_ranks
-    
-    
-     puts "Fantasy Football QB Rankings for 2020:"
+    puts "Fantasy Football QB Rankings for 2020:"
     puts <<-DOC
-      1. Lamar Jackson, Baltimore Ravens
-      2. Patrick Mahomes, Kansas City Chiefs
+      1. Patrick Mahomes, Kansas City Chiefs
+      2. Lamar Jackson, Baltimore Ravens
     DOC
   end
 
@@ -18,14 +17,4 @@ class Ff2020::Rankings
       2. Saquan Barkley, New York Giants
     DOC
   end
-  
-  def self.wr_ranks
-    puts "Fantasy Football WR Rankings for 2020:"
-    puts <<-DOC
-      1. Michael Thomas, New Orleans Saints
-      2. Julio Jones, Atlanta Cardinals
-    DOC
-  end
-  
-  
 end
