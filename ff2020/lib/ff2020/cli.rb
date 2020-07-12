@@ -1,18 +1,23 @@
 class Ff2020::CLI
   
   def call
-    qb_rankings
-    rb_rankings
+    qb_one
+    qb_two
+    qb_three
     rankings
     goodbye
   end
   
-  def qb_rankings
-    @ranking = Ff2020::Rankings.qb_ranks
+  def qb_one
+    @ranking = Ff2020::Rankings.tier_1
   end
   
-  def rb_rankings
-    @ranking = Ff2020::Rankings.rb_ranks
+  def qb_two
+    @ranking = Ff2020::Rankings.tier_2
+  end
+  
+  def qb_three
+    @ranking = Ff2020::Rankings.tier_3
   end
   
   def rankings
@@ -21,15 +26,18 @@ class Ff2020::CLI
     while input != "exit"
       input = gets.strip
       case input
-      when "QB"
-        puts "#{qb_rankings}"
-      when "RB"
-        puts "#{rb_rankings}"
+      when "1"
+        puts "#{qb_one}"
+      when "2"
+        puts "#{qb_two}"
+      when "3"
+        puts "#{qb_three}"
       when "list"
-        qb_rankings
-        rb_rankings
+        qb_one
+        qb_two
+        qb_three
       else
-        puts "Not a rankings list: please type a position or exit."
+        puts "Not a tier listed: please type a QB tier or exit."
       end
     end
   end
