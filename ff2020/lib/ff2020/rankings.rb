@@ -1,6 +1,8 @@
 class Ff2020::Rankings
   
   def self.qb_ranks
+    
+    
      puts "Fantasy Football QB Rankings for 2020:"
     puts <<-DOC
       1. Lamar Jackson, Baltimore Ravens
