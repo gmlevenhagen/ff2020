@@ -1,78 +1,46 @@
 class Ff2020::Api
   
   
-  
-  
   #https://www.fantasypros.com/nfl/rankings/qb-cheatsheets.php
   #<link rel="canonical" href="https://www.fantasypros.com/nfl/rankings/qb-cheatsheets.php">
   #<meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  def self.tier_1qb
-    puts "Fantasy Football QB Tier 1 for 2020:"
-      puts <<-DOC
-        QB Tier 1:
-        1. Patrick Mahomes, Kansas City Chiefs
-        2. Lamar Jackson, Baltimore Ravens
-      DOC
-     end
-  
-    def self.tier_2qb
-      puts "Fantasy Football QB Tier 2 for 2020:"
-       puts <<-DOC
-         QB Tier 2:
-         1. Dak Prescott, Dallas Cowboys
-         2. Russell Wilson, Seattle Seahawks
-         3. Deshaun Watson, Houston Texans
-         4. Kyler Murray, Arizona Cardinals
-        DOC
-     end
-  
-  def self.tier_3qb
-    puts "Fantasy Football QB Tier 3 for 2020:"
-    puts <<-DOC
-      QB Tier 3:
-      1. Aaron Rodgers, Green Bay Packers
-      2. Matt Ryan, Atlanta Falcons
-      3. Carson Wentz, Philadelphia Eagles
-      4. Drew Brees, New Orlean Saints
-      5. Tom Brady, New England Patriots
-    DOC
+  def self.weekly_rankings
+    self.scrape_ranks
   end
-  
-  #https://www.fantasypros.com/nfl/rankings/ppr-rb-cheatsheets.php
-  #<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  #<link rel="canonical" href="https://www.fantasypros.com/nfl/rankings/ppr-rb-cheatsheets.php"/>
-  
-  def self.tier_1rb
-    puts "Fantasy Football RB Tier 1 for 2020:"
-    puts <<-DOC
-      RB Tier 1:
-      1. Christian McCaffery, Carolina Panthers
-      2. Saquan Barkley, New York Giants
-      3. Ezekiel Elliot, Dalls Cowboys
-    DOC
+
+  def self.scrape_ranks
+    ranks = []
+
+    ranks << self.scrape_cbs
+    ranks << self.scrape_ffc
+
+    ranks
   end
-  
-  def self.tier_2rb
-    puts "Fantasy Football RB Tier 2 for 2020:"
-    puts <<-DOC
-      RB Tier 2:
-      1. Alvin Kamara, New Orlean Saints
-      2. Russell Wilson, Seattle Seahawks
-      3. Deshaun Watson, Houston Texans
-      4. Kyler Murray, Arizona Cardinals
-    DOC
+
+  def self.scrape_ffc
+    doc = Nokogiri::HTML(open("https://fantasyfootballcalculator.com"))
+
+    ranks = self.new
+    ranks.name = doc.search("h1.profile-name").text.strip
+    ranks.team = doc.search("href="/kansas-city-chiefs"").text
+    ranks.url = "<script type="text/javascript" src="https://api.getdrip.com/client/track?url=https%3A%2F%2Ffantasyfootballcalculator.com%2Fplayers%2Fpat-mahomes&amp;visitor_uuid=5141e363ca1647fca6eeef6693d12c19&amp;category=Players&amp;label=Pat%20Mahomes&amp;_action=Player%20Page%20Viewed&amp;drip_account_id=3742580&amp;callback=Drip_182813046"></script>"
+
+
+    ranks
   end
-  
-  def self.tier_3rb
-    puts "Fantasy Football RB Tier 3 for 2020:"
-    puts <<-DOC
-      QB Tier 3:
-      1. Kenyan Drake, Arizona Cardinals
-      2. Matt Ryan, Atlanta Falcons
-      3. Carson Wentz, Philadelphia Eagles
-      4. Drew Brees, New Orlean Saints
-      5. Tom Brady, New England Patriots
-    DOC
+
+  def self.scrape_cbs
+    doc = Nokogiri::HTML(open("https://cbssports.com"))
+
+    ranks = self.new
+    ranks.name = doc.search("h1.class = "player-name"").text
+    ranks.team = doc.search("href="/nfl/teams/BAL/baltimore-ravens/"").text
+    ranks.url = "https://www.cbssports.com/fantasy/football/players/2181169/lamar-jackson/"
+
+    ranks
   end
 end
+  
+  
+ 

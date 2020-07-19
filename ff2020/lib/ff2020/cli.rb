@@ -1,85 +1,63 @@
 class Ff2020::CLI
   
   def call
-    qb_one
-    qb_two
-    qb_three
-    rankings1
-    rb_one
-    rb_two
-    rb_three
-    rankings2
+    list_qb
+    list_rb
     goodbye
   end
   
-  def qb_one
-    @api = Ff2020::Api.tier_1qb
+  
+    def list_qb
+    puts "QB Tiers(1-3):"
+    @tier_qb = Ff2020::Api
+    @tier_qb.each.with_index(1) do |tier, i|
+      puts "#{i}. #{qb.name} - #{qb.team}"
+    end
   end
   
-  def qb_two
-    @api = Ff2020::Api.tier_2qb
-  end
-  
-  def qb_three
-    @api = Ff2020::Api.tier_3qb
-  end
-  
-  def rb_one
-    @api = Ff2020::Api.tier_1rb
-  end
-  
-  def rb_two
-    @api = Ff2020::Api.tier_2rb
-  end
-  
-  def rb_three
-    @api = Ff2020::Api.tier_3rb
-  end
-  
-  def rankings1
-    puts "Enter what tier you would like to see from QB rankings or exit"
+  def list_qb
     input = nil
     while input != "exit"
-      input = gets.strip
-      case input
-      when "1"
-        puts "#{qb_one}"
-      when "2"
-        puts "#{qb_two}"
-      when "3"
-        puts "#{qb_three}"
-      when "list"
-        qb_one
-        qb_two
-        qb_three
+      puts "Please enter the QB tier you want(1-3) or type exit:"
+      input = gets.strip.downcase
+
+      if input.to_i > 0
+        qb_rank = @tier_qb[input.to_i-1]
+        puts "#{i}. #{qb.name} - #{qb.team}"
+      elsif input == "list_qb"
+        list_qb
       else
-        puts "Not a tier listed: please type a QB tier(1-3) or exit."
+        puts "Please type 1,2, or 3 for tier or exit."
       end
     end
   end
   
-  def rankings2
-    puts "Enter what tier you would like to see from RB(1-3) rankings or exit"
-    input = nil
-    while input != "exit"
-      input = gets.strip
-      case input
-      when "1"
-        puts "#{rb_one}"
-      when "2"
-        puts "#{rb_two}"
-      when "3"
-        puts "#{rb_three}"
-      when "list"
-        rb_one
-        rb_two
-        rb_three
-      else
-        puts "Not a tier listed: please type a RB tier or exit."
-      end
+  
+  def list_rb
+    puts "RB Tiers(1-3):"
+    @tier_rb = Ff2020::Api
+    @tier_rb.each.with_index(1) do |tier, i|
+      puts "#{i}. #{rb.name} - #{rb.team}"
     end
   end
   
+  def list_rb
+    input = nil
+    while input != "exit"
+      puts "Please enter the RB tier you want(1-3) or type exit:"
+      input = gets.strip.downcase
+
+      if input.to_i > 0
+        rb_rank = @tier_rb[input.to_i-1]
+        puts "#{i}. #{rb.name} - #{rb.team}"
+      elsif input == "list_rb"
+        list_rb
+      else
+        puts "Please type 1,2, or 3 for tier or exit."
+      end
+    end
+  end
+
     def goodbye
       puts "Come back weekly for updated rankings!"
     end
