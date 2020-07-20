@@ -19,24 +19,22 @@ class Ff2020::Api
   end
 
   def self.scrape_ffc
-    doc = Nokogiri::HTML(open("https://fantasyfootballcalculator.com"))
+    doc = Nokogiri::HTML(open("https://fantasyfootballcalculator.com/players/pat-mahomes"))
 
     ranks = self.new
     ranks.name = doc.search("h1.profile-name").text.strip
     ranks.team = doc.search("href.kansas-city-chiefs").text
-    ranks.url = "https://fantasyfootballcalculator.com/players/pat-mahomes"
 
 
     ranks
   end
 
   def self.scrape_cbs
-    doc = Nokogiri::HTML(open("https://cbssports.com"))
+    doc = Nokogiri::HTML(open("https://www.cbssports.com/fantasy/football/players/2181169/lamar-jackson/"))
 
     ranks = self.new
     ranks.name = doc.search("h1.player-name").text.strip
     ranks.team = doc.search("href="/nfl/teams/BAL/baltimore-ravens/"").text
-    ranks.url = "https://www.cbssports.com/fantasy/football/players/2181169/lamar-jackson/"
 
     ranks
   end
