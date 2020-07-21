@@ -1,7 +1,7 @@
 #!usr/bin/env ruby
 require "bundler/setup"
 
-require "./lib/ff2020"
+require 'ff2020'
 
 
 Ff2020::CLI.new.call

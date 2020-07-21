@@ -1,64 +1,47 @@
 class Ff2020::CLI
   
   def call
+    welcome
+    rankings1
     list_qb
-    list_rb
     goodbye
   end
   
   
-    def list_qb
-    puts "QB Tiers(1-3):"
-    @qb_rank = Ff2020::Api
-      puts "#{i}. #{ranks.name} - #{ranks.team}"
-    end
+  def welcome
+    puts "  "
+    puts " ----------------------------------------------"
+    puts " Welcome to Fanatasy Football Rankings 2020!!!!"   
+    puts " ----------------------------------------------"
+    puts "  "
+    puts "  "
+    
+    
+    
   end
   
-  def tier_qb
+  
+  def rankings1
+    puts "Enter what tier you would like to see from QB rankings or exit"
     input = nil
     while input != "exit"
-      puts "Please enter the QB tier you want(1-3) or type exit:"
-      input = gets.strip.downcase
-
-      if input.to_i > 0
-        qb_tier = @qb_rank[input.to_i-1]
-        puts "#{i}. #{ranks.name} - #{ranks.team}"
-      elsif input == "tiers"
-        list_qb
+      input = gets.strip
+      case input
+      when "1"
+        puts "#{qb_one}"
+      when "2"
+        puts "#{qb_two}"
+      when "list"
+        qb_one
+        qb_two
       else
-        puts "Please type 1,2, or 3 for tier or exit."
+        puts "Not a tier listed: please type a QB tier(1-3) or exit."
       end
     end
   end
-  
-  
-  def list_rb
-    puts "RB Tiers(1-3):"
-    @tier_rb = Ff2020::Api
-    @tier_rb.each.with_index(1) do |tier, i|
-      puts "#{i}. #{rb.name} - #{rb.team}"
-    end
-  end
-  
-  def list_rb
-    input = nil
-    while input != "exit"
-      puts "Please enter the RB tier you want(1-3) or type exit:"
-      input = gets.strip.downcase
-
-      if input.to_i > 0
-        rb_rank = @tier_rb[input.to_i-1]
-        puts "#{i}. #{rb.name} - #{rb.team}"
-      elsif input == "list_rb"
-        list_rb
-      else
-        puts "Please type 1,2, or 3 for tier or exit."
-      end
-    end
-  end
+ 
 
     def goodbye
       puts "Come back weekly for updated rankings!"
     end
-    
 end
