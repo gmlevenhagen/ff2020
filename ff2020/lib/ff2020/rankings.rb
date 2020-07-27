@@ -20,21 +20,6 @@ class Ff2020::Rankings
     end
   end
 
-  def self.display_story(source)
-    puts <<~DOC
-    #{@story.title}
-    Story #{@story.author}
-    DOC
-      @new_stories[0,5].each do |para|
-        puts <<~DOC
-        #{para}\n
-        DOC
-      end
-    puts <<~DOC
-    Read the rest of the story at #{@url}
-    DOC
-    self.keep_reading(source)
-  end
 
   def self.cbs_rankings(url)
     doc = Nokogiri::HTML(open(url))
