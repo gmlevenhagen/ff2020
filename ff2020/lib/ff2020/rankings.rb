@@ -9,11 +9,11 @@ class Ff2020::Rankings
     if input == "yes" || input == "y"
       case source.to_s
       when "cbs"
-        Scraper.get_choice("cbs")
+        Scraper.get_rankings("cbs")
       when "nfl"
-        Scraper.get_choice("nfl")
+        Scraper.get_rankings("nfl")
       when "espn"
-        Scraper.get_choice("espn")
+        Scraper.get_rankings("espn")
       end
     else
       CLI.new.goodbye
@@ -34,7 +34,7 @@ class Ff2020::Rankings
     doc = Nokogiri::HTML(open(url))
     @url = url
     @rankings = self.new
-    @rankings.table = doc.search("div#yui_3_15_0_1_1595850212788_537").text    
+    @rankings.table = doc.search("div.yui_3_15_0_1_1595850212788_537").text    
     end
     self.display_rankings("nfl")
   end

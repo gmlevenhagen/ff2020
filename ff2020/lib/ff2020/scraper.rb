@@ -37,8 +37,8 @@ rankings = []
     i = 0
     while i < 6
       nfl_rankings = self.new
-      nfl_rankings.table = doc.search("div#yui_3_15_0_1_1595850212788_537")[i].text
-      nfl_rankings.url = main_url +  doc.search("div#yui_3_15_0_1_1595850212788_537")[i].attributes["href"].value
+      nfl_rankings.table = doc.search("div.yui_3_15_0_1_1595850212788_537")[i].text
+      nfl_rankings.url = main_url +  doc.search("div.yui_3_15_0_1_1595850212788_537")[i].attributes["href"].value
       @rankings << nfl_rankings
       i += 1
     end

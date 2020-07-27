@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{ Fantasy football rankings}
   spec.description   = %q{ Fantasy football rankings.}
-  spec.homepage      = 'http://fantasypros.com'
+  spec.homepage      = 'https://nfl.com'
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'

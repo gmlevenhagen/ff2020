@@ -2,11 +2,11 @@ class Ff2020::CLI
   
   def call
     puts ""
-    puts "---------------------------------------------------"
-    puts "Welcome to the 2020 NFL Fantasy Football Rankings!!"
-    puts "---------------------------------------------------"
-    puts "View rankings for Quarterbacks from the following sites:"
-    puts "---------------------------------------------------"
+    puts "----------------------------------------------------------"
+    puts "    Welcome to the 2020 NFL Fantasy Football Rankings!!"
+    puts "    ---------------------------------------------------"
+    puts "  View rankings for Quarterbacks from the following sites:"
+    puts "----------------------------------------------------------"
     puts ""
     list_rankings
     menu
