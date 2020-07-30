@@ -8,11 +8,11 @@ class Ff2020::CLI
     puts "  View rankings for Quarterbacks from the following sites:"
     puts "----------------------------------------------------------"
     puts ""
-    list_rankings
+    list_options
     menu
   end
 
-  def list_rankings
+  def list_options
     puts <<~DOC
       1. ESPN.com
       2. NFL.com
@@ -22,7 +22,7 @@ class Ff2020::CLI
 
   def menu
     puts "Enter the number for the site you want to see rankings from.  You can type list to display sites or exit to cancel."
-    input = gets.strip.downcase
+    input = gets.strip
     puts ""
     if input == "1"
       Ff2020::Scraper.scrape_espn
@@ -31,7 +31,7 @@ class Ff2020::CLI
     elsif input == "3"
       Ff2020::Scraper.scrape_cbs
     elsif input == "list"
-      list_rankings
+      list_options
     elsif input == "exit"
       goodbye
     else
