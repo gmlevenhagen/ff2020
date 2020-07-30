@@ -25,11 +25,11 @@ class Ff2020::CLI
     input = gets.strip
     puts ""
     if input == "1"
-      @qb_one
+      qb_one.scrape_fp
     elsif input == "2"
-      @qb_two
+      qb_two.scrape_nfl
     elsif input == "3"
-      @qb_three
+      qb_three.scrape_cbs
     elsif input == "list"
       list_options
     elsif input == "exit"

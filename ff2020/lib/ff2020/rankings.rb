@@ -1,18 +1,18 @@
 class Ff2020::Rankings
   
   def qb_one
-    puts Ff2020::Scraper.scrape_fp
+    puts "This is QB1!"
   end
 end
 
   def qb_two
-    puts Ff2020::Scraper.scrape_nfl
+    puts "This is QB2!"
   end
 end
 
 
   def qb_three
-    puts Ff2020::Scraper.scrape_cbs
+    puts "This is QB3!"
   end
 end
 
