@@ -14,7 +14,7 @@ class Ff2020::CLI
 
   def list_options
     puts <<~DOC
-      1. ESPN.com
+      1. FantasyPros.com
       2. NFL.com
       3. CBSSports.com
     DOC
@@ -25,11 +25,11 @@ class Ff2020::CLI
     input = gets.strip
     puts ""
     if input == "1"
-      Ff2020::Scraper.scrape_espn
+      @qb_one
     elsif input == "2"
-      Ff2020::Scraper.scrape_nfl
+      @qb_two
     elsif input == "3"
-      Ff2020::Scraper.scrape_cbs
+      @qb_three
     elsif input == "list"
       list_options
     elsif input == "exit"
