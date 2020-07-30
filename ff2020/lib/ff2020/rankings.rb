@@ -9,11 +9,11 @@ class Ff2020::Rankings
     if input == "yes" || input == "y"
       case source.to_s
       when "cbs"
-        Scraper.get_rankings("cbs")
+        Scraper.espn_rankings
       when "nfl"
-        Scraper.get_rankings("nfl")
+        Scraper.
       when "espn"
-        Scraper.get_rankings("espn")
+        Scraper.get_rankings("cbs")
       end
     else
       CLI.new.goodbye

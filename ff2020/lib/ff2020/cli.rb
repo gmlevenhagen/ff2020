@@ -14,22 +14,22 @@ class Ff2020::CLI
 
   def list_rankings
     puts <<~DOC
-      1. CBSSports.com
+      1. ESPN.com
       2. NFL.com
-      3. ESPN.com
+      3. CBSSports.com
     DOC
   end
 
   def menu
-    puts "Enter the number for the site you want to see rankings from.You can type list to display sites or exit to cancel."
+    puts "Enter the number for the site you want to see rankings from.  You can type list to display sites or exit to cancel."
     input = gets.strip.downcase
     puts ""
     if input == "1"
-      Scraper.get_rankings("cbs")
+      Ff2020::Scraper.scrape_espn
     elsif input == "2"
-      Scraper.get_rankings("nfl")
+      Ff2020::Scraper.scrape_nfl
     elsif input == "3"
-      Scraper.get_rankings("espn")
+      Ff2020::Scraper.scrape_cbs
     elsif input == "list"
       list_rankings
     elsif input == "exit"
